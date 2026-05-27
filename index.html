@@ -241,7 +241,30 @@
   }
 }
 
-    /* HERO */
+    /* ── DETACHED STATS BASELINE (DESKTOP FIRST) ── */
+  .about-stats {
+    border-top: 1px solid var(--light-border);
+    padding-top: 72px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+
+  /* ── CLEAN RESPONSIVE MEDIA QUERIES ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 16px; height: 56px; }
+    .nav-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .nav-logo { font-size: 11px; letter-spacing: 0.1em; }
+    .nav-logo span { display: none; }
+    .nav-actions { gap: 12px; }
+    
+    /* Safely collapses to 1 column only on smaller screen viewports */
+    .about-stats {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-text { padding: 40px 20px; order: 2; }
     .hero-headline { font-size: 42px; }
@@ -252,59 +275,35 @@
     .hero-img-fill { min-height: 280px; }
     .hero-label { bottom: 16px; left: 16px; font-size: 9px; padding: 8px 12px; }
     .hero-accent { display: none; }
-
-    /* BUTTONS */
     .btn-accent, .btn-outline, .btn-primary { padding: 12px 20px; font-size: 9px; letter-spacing: 0.14em; }
     .hero-text > div { flex-direction: column; }
     .hero-text > div button { width: 100%; justify-content: center; }
-
-    /* MARQUEE */
     .marquee-inner span { margin: 0 24px; font-size: 9px; }
-
-    /* SECTIONS */
     section { padding: 48px 16px; }
     .section-title { font-size: 38px; }
-
-    /* PRODUCT GRIDS */
     .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .shop-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; padding: 0 16px 56px; }
-
-    /* ADAPTIVE STRIP */
     .adaptive-strip { grid-template-columns: 1fr; padding: 48px 16px; gap: 32px; }
     .adaptive-image { display: none; }
     .adaptive-headline { font-size: 38px; }
     .adaptive-values { grid-template-columns: 1fr 1fr; gap: 10px; }
-
-    /* ABOUT STRIP */
     .about-strip { grid-template-columns: 1fr; padding: 48px 16px; gap: 32px; }
     .about-image-block { aspect-ratio: 4/3; }
     .about-quote { font-size: 28px; }
-
-    /* SHOP PAGE */
     .shop-header { flex-direction: column; align-items: flex-start; gap: 12px; padding: 32px 16px 0; }
     .shop-title { font-size: 38px; }
     .filter-row { flex-wrap: wrap; gap: 8px; width: 100%; }
     .filter-select { flex: 1; min-width: 120px; }
-
-    /* PRODUCT DETAIL */
     .pdp-grid { grid-template-columns: 1fr; padding: 20px 16px; gap: 32px; }
     .pdp-name { font-size: 38px; }
-
-    /* FOOTER */
     footer { padding: 48px 16px 24px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
     .footer-brand { font-size: 22px; }
-
-    /* CART */
     .cart-drawer { width: 100vw; }
-
-    /* ABOUT PAGE */
     .about-page-inner { padding: 48px 16px !important; }
     .about-founder-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     .about-founder-grid h1 { font-size: 40px !important; }
     .about-values-grid { grid-template-columns: 1fr 1fr !important; }
-    .about-stats { grid-template-columns: 1fr !important; gap: 20px !important; }
-    .about-stats p:first-child { font-size: 40px !important; }
   }
 </style>
 </head>
