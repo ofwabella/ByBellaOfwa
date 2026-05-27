@@ -219,11 +219,31 @@
   /* RESPONSIVE */
   @media (max-width: 768px) {
     /* NAV */
-    nav { padding: 0 16px; height: 56px; }
-    .nav-links {   display: flex;   width: 100%;   justify-content: center;   gap: 18px;   order: 3;   padding: 10px 0 6px;   flex-wrap: wrap; }
-    .nav-logo { font-size: 11px; letter-spacing: 0.1em; }
-    .nav-logo span { display: none; }
-    .nav-actions { gap: 12px; }
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* force nav actions to stick top-right */
+.nav-actions {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* keep logo centered cleanly */
+.nav-logo {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* optional: keep links hidden or compact on mobile */
+.nav-links {
+  display: none; /* or keep if you want hamburger later */
+}
 
     /* HERO */
     .hero { grid-template-columns: 1fr; min-height: auto; }
