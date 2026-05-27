@@ -215,18 +215,18 @@
   .pib-6 { background: linear-gradient(145deg, #F5F4EC, #EDEAE0); }
   .pib-1 span, .pib-3 span, .pib-4 span, .pib-5 span { color: rgba(253,252,240,0.3); }
   .pib-2 span, .pib-6 span { color: rgba(100,90,80,0.4); }
- 
-    /* ── DETACHED STATS BASELINE (DESKTOP FIRST) ── */
+
+  /* 1. Desktop Layout (Default: Spreads across 3 columns horizontally) */
   .about-stats {
     border-top: 1px solid var(--light-border);
     padding-top: 72px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal horizontal columns */
     gap: 32px;
     text-align: center;
   }
 
-  /* ── CLEAN RESPONSIVE MEDIA QUERIES ── */
+  /* RESPONSIVE MEDIA QUERY */
   @media (max-width: 768px) {
     nav { padding: 0 16px; height: 56px; }
     .nav-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
@@ -234,12 +234,12 @@
     .nav-logo span { display: none; }
     .nav-actions { gap: 12px; }
     
-    /* Safely collapses to 1 column only on smaller screen viewports */
+    /* 2. Mobile Layout (Changes to a single vertical column only on small screens) */
     .about-stats {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; 
       gap: 20px;
     }
-
+    
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-text { padding: 40px 20px; order: 2; }
     .hero-headline { font-size: 42px; }
@@ -280,6 +280,7 @@
     .about-founder-grid h1 { font-size: 40px !important; }
     .about-values-grid { grid-template-columns: 1fr 1fr !important; }
   }
+ 
 </style>
 </head>
 <body>
