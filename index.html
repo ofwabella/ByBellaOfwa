@@ -225,44 +225,14 @@
     gap: 32px;
     text-align: center;
   }
-/* Base structural adjustments for new groups */
-  .right-nav-group { display: flex; align-items: center; gap: 16px; }
-  .menu-toggle-btn { display: none; } /* Hidden on Desktop */
-  .mobile-menu-close { display: none; } /* Hidden on Desktop */
-  .nav-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 140; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
-  .nav-overlay.open { opacity: 1; pointer-events: all; }
 
- /* ── CLEAN RESPONSIVE MEDIA QUERIES ── */
+  /* RESPONSIVE MEDIA QUERY */
   @media (max-width: 768px) {
-    nav { padding: 0 20px; height: 60px; display: flex; flex-direction: row-reverse; justify-content: space-between; }
-    
-    /* Lock Actions (Search/Cart) on the left side */
-    .left-actions { order: 1; gap: 16px; }
-    
-    /* Group Logo and Dashboard Icon on the right side */
-    .right-nav-group { order: 2; flex-direction: row-reverse; gap: 12px; }
+    nav { padding: 0 16px; height: 56px; }
+    .nav-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
     .nav-logo { font-size: 11px; letter-spacing: 0.1em; }
     .nav-logo span { display: none; }
-    .menu-toggle-btn { display: flex; color: var(--mid-gray); cursor: pointer; }
-
-    /* Transform nav links into a sliding drawer from the Left */
-    .nav-links {
-      position: fixed; top: 0; left: 0; bottom: 0;
-      width: 280px; background: var(--stalactite);
-      flex-direction: column; justify-content: flex-start; align-items: flex-start;
-      padding: 40px 32px; gap: 28px;
-      z-index: 150; box-shadow: 4px 0 24px rgba(0,0,0,0.05);
-      transform: translateX(-100%); /* Pushes it completely off-screen to the left */
-      transition: transform 0.35s ease-in-out;
-    }
-    
-    /* Slide out menu active state */
-    .nav-links.open { transform: translateX(0); }
-    .nav-links a { font-size: 13px; color: var(--jet-black); font-weight: 400; }
-    
-    /* Close cross button inside side drawer */
-    .mobile-menu-close { display: block; width: 100%; text-align: right; margin-bottom: 12px; }
-    .mobile-menu-close button { background: none; border: none; font-size: 18px; color: var(--mid-gray); cursor: pointer; }
+    .nav-actions { gap: 12px; }
     
     /* 2. Mobile Layout (Changes to a single vertical column only on small screens) */
     .about-stats {
@@ -327,10 +297,18 @@
 </div>
 
 <div class="toast" id="toast"></div>
- 
+
 <!-- NAV -->
 <nav>
-  <div class="nav-actions left-actions">
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')">Home</a></li>
+    <li><a href="#" onclick="showPage('shop')">Shop</a></li>
+    <li><a href="#" onclick="showPage('about')">Our Story</a></li>
+  </ul>
+  <div class="nav-logo" onclick="showPage('home')">
+  <img src="logo.png" style="height:200px; width:auto;">
+</div>
+  <div class="nav-actions">
     <button class="nav-icon-btn" aria-label="Search" style="font-size:16px;">&#x2315;</button>
     <button class="nav-icon-btn cart-badge" onclick="openCart()" aria-label="Cart">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
@@ -341,31 +319,7 @@
       <span class="badge" id="cartCount">0</span>
     </button>
   </div>
-
-  <ul class="nav-links" id="mobileNavMenu">
-    <li class="mobile-menu-close"><button onclick="toggleMobileNav()">&#x2715;</button></li>
-    <li><a href="#" onclick="showPage('home'); toggleMobileNav();">Home</a></li>
-    <li><a href="#" onclick="showPage('shop'); toggleMobileNav();">Shop</a></li>
-    <li><a href="#" onclick="showPage('about'); toggleMobileNav();">Our Story</a></li>
-  </ul>
-
-  <div class="right-nav-group">
-    <div class="nav-logo" onclick="showPage('home')">
-      <img src="logo.png" style="height:40px; width:auto;">
-      <span>Adaptive Construction. Timeless Restraint.</span>
-    </div>
-    <button class="nav-icon-btn menu-toggle-btn" onclick="toggleMobileNav()" aria-label="Open Menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="3" y="3" width="7" height="7" />
-        <rect x="14" y="3" width="7" height="7" />
-        <rect x="3" y="14" width="7" height="7" />
-        <rect x="14" y="14" width="7" height="7" />
-      </svg>
-    </button>
-  </div>
 </nav>
-
-<div class="nav-overlay" id="navOverlay" onclick="toggleMobileNav()"></div>
 
 <!-- ============================================================ -->
 <!--  HOME PAGE                                                    -->
