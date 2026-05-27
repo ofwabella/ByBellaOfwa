@@ -224,9 +224,21 @@
     .nav-logo { font-size: 11px; letter-spacing: 0.1em; }
     .nav-logo span { display: none; }
     .nav-actions { gap: 12px; }
+   .about-stats {
+  border-top: 1px solid var(--light-border);
+  padding-top: 72px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+}
 
 /* MOBILE FIX */
-@media (max-width: 768px)
+@media (max-width: 768px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
     /* HERO */
@@ -291,27 +303,8 @@
     .about-founder-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     .about-founder-grid h1 { font-size: 40px !important; }
     .about-values-grid { grid-template-columns: 1fr 1fr !important; }
-    .about-stats {
-  border-top: 1px solid var(--light-border);
-  padding-top: 72px;
-  display: flex;
-  gap: 48px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.about-stats::-webkit-scrollbar {
-  display: none;
-}
-
-.about-stats > div {
-  flex: 0 0 auto;
-  min-width: 180px;
-  text-align: center;
-  scroll-snap-align: start;
-}
+    .about-stats { grid-template-columns: 1fr !important; gap: 20px !important; }
+    .about-stats p:first-child { font-size: 40px !important; }
   }
 </style>
 </head>
