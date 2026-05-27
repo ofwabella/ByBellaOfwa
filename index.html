@@ -224,6 +224,22 @@
     .nav-logo { font-size: 11px; letter-spacing: 0.1em; }
     .nav-logo span { display: none; }
     .nav-actions { gap: 12px; }
+   .about-stats {
+  border-top: 1px solid var(--light-border);
+  padding-top: 72px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
 
     /* HERO */
     .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -572,7 +588,7 @@
     </div>
 
     <!-- STATS -->
-    <div style="border-top:1px solid var(--light-border);padding-top:72px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center;">
+    <div class="about-stats">
       <div>
         <p style="font-family:var(--font-display);font-size:56px;font-weight:300;color:var(--orange-pepper);">2026</p>
         <p style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid-gray);">RTW Launch</p>
